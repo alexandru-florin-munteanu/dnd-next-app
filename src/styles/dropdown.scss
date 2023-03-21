@@ -1,0 +1,150 @@
+@import "mixins";
+@import "bootstrap-components";
+@import "~bootstrap/scss/dropdown";
+
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    ) !default;
+$caret-size: 0.75rem;
+
+.dropdown-menu {
+    padding: $dropdown-menu-padding-y $dropdown-menu-padding-x;
+    box-shadow: none;
+
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+        min-width: initial;
+    }
+}
+
+@mixin dropdown-active-hover-state {
+    &:not(:active):hover {
+        @include gradient-bg($dropdown-link-hover-bg
+    );
+}
+}
+
+@mixin dropdown-active-state {
+    position: relative;
+
+    &:active,
+    &.active {
+        background: #afa;
+        @include dropdown-active-hover-state;
+    }
+}
+
+.dropdown-header {
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 2.2rem;
+    white-space: initial;
+    color: #333;
+}
+
+.dropdown-item {
+    @include dropdown-active-state;
+    white-space: initial;
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dropdown-item-heading {
+    &:hover {
+        cursor: unset;
+        background-color: inherit;
+    }
+}
+
+.dropdown-item-child {
+    padding: $dropdown-item-padding-y $dropdown-child-item-padding-x;
+}
+
+.dropdown-button {
+    .dropdown-menu {
+        max-width: $dropdown-min-width;
+        width: 100%;
+        overflow-x: hidden;
+
+        @media (max-width: map-get($grid-breakpoints, sm)) {
+            max-width: initial;
+        }
+    }
+
+    // overwrite default bootstrap button to fit design for dropdown-button
+    .btn.dropdown-toggle {
+        color: $dropdown-toggle-color;
+        background-color: $dropdown-toggle-background-color;
+        border-color: $dropdown-toggle-border-color;
+        text-align: inherit;
+        font-family: sans-serif;
+        text-transform: initial;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: normal;
+        min-width: $dropdown-min-width;
+        padding-right: 45px;
+        padding-left: 15px;
+        position: relative;
+
+        @media (max-width: map-get($grid-breakpoints, sm)) {
+            min-width: initial;
+            width: 100%;
+        }
+
+        &:focus,
+        &:hover {
+            cursor: pointer;
+            background-color: $dropdown-toggle-background-color;
+            border-color: $dropdown-toggle-border-color;
+            box-shadow: none;
+        }
+    }
+}
+
+.dropdown-toggle {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    padding-right: calc(#{$caret-size} + #{$dropdown-item-padding-x});
+
+    &:after {
+        position: absolute;
+        right: 15px;
+        top: calc(72% - #{$caret-size});
+        height: $caret-size;
+        width: $caret-size;
+        border: none;
+        // background: url("#{$icon-base-path}/chevron-down.svg") center no-repeat;
+        background: #333 center no-repeat;
+        background-size: cover;
+    }
+
+    &.btn-lg {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    &.btn-lg:after {
+        top: calc(60% - #{$caret-size});
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.show {
+    .dropdown-toggle {
+        &:after {
+            transform: rotate(-180deg);
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$navbar-padding-x: null;
+$prefix: 'bs';
+
+.open-modal-button {
+    background-color: rgb(133, 133, 180);
+    color: #252525;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+$box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+$border-width: 2px;
+// Variables, will be moved later on, testing the WolfForge Navbar 
+/// Dropdowns
+////
+//// Dropdown menu container and contents.
+//
+$dropdown-min-width: 360px;
+$dropdown-padding-y: 0;
+$dropdown-font-size: 0.8em;
+$dropdown-btn-font-size: 0.8em;
+$dropdown-border-radius: 0;
+$dropdown-border-width: $border-width;
+$dropdown-inner-border-radius: 0;
+$dropdown-divider-margin-y: 0;
+$dropdown-box-shadow: $box-shadow;
+$dropdown-toggle-color: black;
+$dropdown-toggle-background-color: #fefefe;
+$dropdown-toggle-border-color: #cecece;
+
+$dropdown-menu-padding-y: map_get($spacers, 2);
+$dropdown-menu-padding-x: map_get($spacers, 0);
+
+$dropdown-link-disabled-color: $gray-500;
+$dropdown-link-active-bg: transparent;
+
+$dropdown-item-padding-y: map_get($spacers, 2);
+$dropdown-item-padding-x: map_get($spacers, 4);
+$dropdown-child-item-padding-x: map_get($spacers, 5);

@@ -1,2 +1,12 @@
+@import "custom-variables";
+@import "custom-bootstrap";
+@import "dropdown.scss";
+@import "main.scss";
+@import "button.scss";
+@import "globals.scss";
 @import "./variables";
-@import "~bootstrap/scss/bootstrap";
+// Other imports and styles
+
+
+$navbar-padding-x: null;
+$prefix: 'bs';
