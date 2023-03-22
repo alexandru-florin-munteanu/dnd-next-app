@@ -1,22 +1,26 @@
-export const DEFAULT_MENU_NAV = [
+const navigation = [
   {
-    text: "Home",
-    href: process.env.MAIN_URL || "http://localhost:3000/",
-    isActive: true,
+    label: "Home",
+    href: "/",
   },
   {
-    text: "About",
-    href: process.env.MAIN_URL || "http://localhost:3000/",
-    isActive: false,
+    label: "About",
+    href: "/about",
   },
   {
-    text: "Contact us",
-    href: process.env.MAIN_URL || "http://localhost:3000/",
-    isActive: false,
-  },
-  {
-    text: "Join",
-    href: process.env.MAIN_URL || "http://localhost:3000/",
-    isActive: false,
+    label: "Dropdown",
+    dropdown: true,
+    dropdownItems: [
+      {
+        label: "Item 1",
+        href: "/item-1",
+      },
+      {
+        label: "Item 2",
+        href: "/item-2",
+      },
+    ],
   },
 ];
+
+export default navigation;
