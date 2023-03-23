@@ -1,12 +1,30 @@
 import React from "react";
-import SignInForm from "components/auth/SignInForm";
-import { Container } from "react-bootstrap";
+import { useRouter } from "next/router";
+import { Container, Button, Row, Col } from "react-bootstrap";
+import styles from "styles/SignIn.module.scss";
 
 const SignIn = () => {
+  const router = useRouter();
+
+  const handleSignIn = () => {
+    router.push("/api/auth/login");
+  };
+
   return (
     <Container>
-      <h1 className="text-center">Sign In</h1>
-      <SignInForm />
+      <Row className="justify-content-center">
+        <Col xs={12} sm={10} md={8} lg={6} className={styles.signInContainer}>
+          <h1 className="text-center">Welcome</h1>
+          <p className="text-center">
+            Click the button below to sign in or sign up using Auth0.
+          </p>
+          <div className="text-center">
+            <Button variant="primary" onClick={handleSignIn} size="lg">
+              Sign In / Sign Up
+            </Button>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 };
