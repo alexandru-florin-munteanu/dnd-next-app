@@ -1,0 +1,38 @@
+.characters-container {
+    background-color: #f4eee8;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    .row-spacing {
+        margin-bottom: 12px;
+    }
+
+    .heading-spacing {
+        margin-bottom: 14px;
+    }
+}
+
+.characters-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #3e3b3b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.characters-table {
+    th {
+        font-family: 'Cinzel', serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        background-color: #d9d1c5;
+        color: #3e3b3b;
+    }
+
+    td {
+        font-family: 'Roboto Slab', serif;
+        color: #3e3b3b;
+    }
+}

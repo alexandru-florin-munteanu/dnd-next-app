@@ -1,0 +1,96 @@
+// src/components/ImageCarousel.scss
+
+.image-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    max-height: 450px;
+}
+
+.image-carousel__track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-carousel__slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-position: bottom center;
+
+        .object-fit-cover {
+            object-fit: cover;
+        }
+
+        .object-fit-cover {
+            object-fit: fill;
+        }
+    }
+}
+
+.image-carousel__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 8px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &--prev {
+        left: 16px;
+    }
+
+    &--next {
+        right: 16px;
+    }
+}
+
+.image-carousel__dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.image-carousel__dot {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 12px;
+    margin: 0 4px;
+    padding: 0;
+    width: 12px;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &--active {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .image-carousel__nav {
+        display: none;
+    }
+}
